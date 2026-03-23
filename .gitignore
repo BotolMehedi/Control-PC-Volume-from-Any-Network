@@ -17,3 +17,4 @@ web-app/.vercel/
 *.zip
 *.7z
 mehedipush.js
+.gitignore

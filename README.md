@@ -1,4 +1,4 @@
-<h1 align="center">SOUND CONTROL PC</h1>
+<h1 align="center">Control PC Volume from Any Network</h1>
 
 <div align="center">
 
