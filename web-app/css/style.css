@@ -1,0 +1,341 @@
+:root {
+    --cyan: #06b6d4;
+    --purple: #8b5cf6;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overscroll-behavior: none;
+    /* Prevent pull-to-refresh */
+}
+
+/* Utilities */
+.text-cyan {
+    color: var(--cyan) !important;
+}
+
+.fw-black {
+    font-weight: 900;
+}
+
+.tracking-widest {
+    letter-spacing: 0.2em;
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+}
+
+/* Backgrounds */
+.ambient-glow {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 10s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.app-bg-glow {
+    position: absolute;
+    bottom: -20%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.btn-glass-icon {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.btn-glass-icon:active {
+    transform: scale(0.9);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.btn-action {
+    background: linear-gradient(135deg, var(--cyan), #3b82f6);
+    color: white;
+    border: none;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+    transition: all 0.2s;
+}
+
+.btn-action:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+}
+
+/* Login UI */
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(6, 182, 212, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+.pin-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+
+.pin-dot.active {
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+    transform: scale(1.2);
+}
+
+.btn-keypad {
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 12px;
+}
+
+.btn-keypad:active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-keypad-primary {
+    height: 60px;
+    background: var(--cyan);
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.btn-keypad-action {
+    height: 60px;
+    background: rgba(220, 53, 69, 0.1);
+    border: none;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+/* Custom Range Slider */
+.custom-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    outline: none;
+    transition: background 0.2s;
+}
+
+.custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    background: var(--cyan);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--cyan);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: transform 0.1s;
+}
+
+.custom-range::-webkit-slider-thumb:active {
+    transform: scale(1.2);
+    box-shadow: 0 0 25px var(--cyan);
+}
+
+.custom-range::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    background: var(--cyan);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--cyan);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: transform 0.1s;
+}
+
+.custom-range::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 10px rgba(25, 135, 84, 0.5);
+    animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* New Utilities & Scanner */
+.justify-center {
+    justify-content: center;
+}
+
+.bg-cyan-10 {
+    background: rgba(6, 182, 212, 0.1);
+}
+
+.bg-purple-10 {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.text-purple {
+    color: var(--purple) !important;
+}
+
+.hover-scale {
+    transition: transform 0.2s, background 0.2s;
+}
+
+.hover-scale:active {
+    transform: scale(0.98);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.glass-header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.glass-footer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.scan-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.scan-overlay::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 2px solid transparent;
+    border-top-color: var(--cyan);
+    border-bottom-color: var(--cyan);
+    border-radius: 20px;
+    animation: scan-pulse 2s infinite;
+}
+
+@keyframes scan-pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}

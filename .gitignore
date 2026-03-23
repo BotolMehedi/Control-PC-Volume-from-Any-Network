@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+pc-app/node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local build/deploy metadata
+web-app/.vercel/
+
+# Local artifacts
+*.rar
+*.zip
+*.7z
+mehedipush.js
