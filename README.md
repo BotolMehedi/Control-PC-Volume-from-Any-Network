@@ -45,6 +45,20 @@ When to use it:
 
 In short, this project turns your phone into a practical remote control for PC audio and playback, with secure PIN access and reconnect-safe behavior.
 
+
+<div style="display: flex; overflow-x: auto; gap: 10px; padding: 10px;">
+  <a href="pc-app/i1.png">
+    <img src="pc-app/i1.png" alt="Slide 1" width="300" style="flex: 0 0 auto;">
+  </a>
+  <a href="pc-app/i2.png">
+    <img src="pc-app/i2.png" alt="Slide 2" width="300" style="flex: 0 0 auto;">
+  </a>
+  <a href="pc-app/i3.png">
+    <img src="pc-app/i3.png" alt="Slide 3" width="300" style="flex: 0 0 auto;">
+  </a>
+</div>
+
+
 ---
 
 ## Features
